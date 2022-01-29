@@ -1,14 +1,13 @@
 //%block="Keyboard" color=#00cbff icon="\uf11c"
 namespace keyboard {
-    //%block="Create Keyboard %cursorimg %start_x %start_y" color=#00cbff blockId="createKeyboard"
-    export function createKeyboard(cursorimg?: Image, start_x = 0, start_y = 0) {
+    //%block="Create Keyboard With Cursor Img %cursorimg X %start_x Y %start_y Chars %chars" color=#00cbff blockId="createKeyboard"
+    export function createKeyboard(cursorimg?: Image, start_x = 0, start_y = 0, chars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".", ",", ":", " "]) {
             pause(200)
             let input = ""
             let cursor = sprites.create(cursorimg)
-            let cursor_x = 10
-            let cursor_y = 80
+            let cursor_x = 10 + start_x
+            let cursor_y = 80 + start_y
             cursor.setPosition(cursor_x, cursor_y)
-            let chars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".", ",", ":", " "]
             let cursor_pos_x = [0]
             let cursor_pos_y = [0]
             let cursor_chars = [{ x: 0, y: 0, char: "" }]
