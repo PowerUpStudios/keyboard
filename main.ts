@@ -101,6 +101,8 @@ namespace keyboard {
                                 for (let btn = 0; btn < btns.length; btn++) {
                                     btns[btn].destroy()
                                 }
+                                enter_btn.destroy()
+                                back_btn.destroy()
                                 _input = input
                             } else {
                                 input = input.slice(0, -1)
