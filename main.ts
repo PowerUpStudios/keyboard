@@ -1,7 +1,7 @@
 //%block="Keyboard" color=#00cbff icon="\uf11c"
 namespace keyboard {
     //%block="Create Keyboard %onenter %onchange %cursorimg %start_x %start_y" color=#00cbff blockId="createKeyboard"
-    export function createKeyboard(onenter: (input: string) => void, onchange: (input: string) => void, cursorimg?: Image, start_x = 0, start_y = 0) {
+    export function createKeyboard(onenter: (onenter: string) => void, onchange: (onchange: string) => void, cursorimg?: Image, start_x = 0, start_y = 0) {
         pause(200)
         let input = ""
         let cursor = sprites.create(cursorimg)
