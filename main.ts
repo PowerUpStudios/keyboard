@@ -1,8 +1,9 @@
 //%block="Keyboard" color=#00cbff icon="\uf11c"
 namespace keyboard {
     //%block="ATEST %variable AND %array" blockId="ATEST"
-    export function ATEST(variable: Array<string>, array: ["A", "b", "C"]) {
+    export function ATEST(variable: Array<string>) {
         variable = ["AAA"]
+        let array = ["C","B","A"]
         variable.push(array[0])
     }
     //%block="Create Keyboard With Cursor Img %cursorimg X %start_x Y %start_y Chars %chars Result %result" color=#00cbff blockId="createKeyboard"
