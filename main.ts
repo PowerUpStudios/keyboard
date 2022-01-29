@@ -1,7 +1,7 @@
 //%block="Keyboard" color=#00cbff icon="\uf11c"
 namespace keyboard {
-    //%block="Create Keyboard %onenter %onchange %cursorimg %start_x %start_y" color=#00cbff blockId="createKeyboard"
-    export function createKeyboard(onenter: (onenter: string) => void, onchange: (onchange: string) => void, cursorimg?: Image, start_x = 0, start_y = 0) {
+    //%block="Create Keyboard %onchange %cursorimg %start_x %start_y" color=#00cbff blockId="createKeyboard"
+    export function createKeyboard(onchange: (input: string, char: string) => void, cursorimg?: Image, start_x = 0, start_y = 0) {
         pause(200)
         let input = ""
         let cursor = sprites.create(cursorimg)
@@ -94,7 +94,7 @@ namespace keyboard {
                     if (cursor_x == cursor_chars[char].x && cursor_y == cursor_chars[char].y) {
                         if (cursor_chars[char].char != "enter" && cursor_chars[char].char != "back") {
                             input += cursor_chars[char].char
-                            onchange(input)
+                            onchange(input, cursor_chars[char].char)
                             pause(200)
                         } else {
                             if (cursor_chars[char].char != "back") {
@@ -102,11 +102,11 @@ namespace keyboard {
                                 for (let btn = 0; btn < btns.length; btn++) {
                                     btns[btn].destroy()
                                 }
-                                onenter(input)
+                                onchange(input, "enter")
                                 input = ""
                             } else {
                                 input = input.slice(0, -1)
-                                onchange(input)
+                                onchange(input, "back")
                                 pause(200)
                             }
                         }
