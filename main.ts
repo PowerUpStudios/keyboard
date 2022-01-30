@@ -52,10 +52,10 @@ namespace keyboard {
         . . . . 1 . .
         . . . . . . .
     `)
-        enter_btn.setPosition(3 + (x * 7), 80 + y)
-        cursor_pos_x.push(3 + (x * 7))
+        enter_btn.setPosition((3 + (x * 7)) + 14, 80 + y)
+        cursor_pos_x.push((3 + (x * 7)) + 14)
         cursor_pos_y.push(80 + y)
-        cursor_chars.push({ x: 3 + (x * 7), y: 80 + y, char: "enter" })
+        cursor_chars.push({ x: (3 + (x * 7)) + 14, y: 80 + y, char: "enter" })
         let back_btn = sprites.create(img`
         . . . . . . .
         . . 1 . . . .
@@ -65,10 +65,10 @@ namespace keyboard {
         . . 1 . . . .
         . . . . . . .
     `)
-        back_btn.setPosition(3 + x, 80 + y)
-        cursor_pos_x.push(3 + x)
+        back_btn.setPosition((3 + (x * 7)) + 7, 80 + y)
+        cursor_pos_x.push((3 + (x * 7)) + 7)
         cursor_pos_y.push(80 + y)
-        cursor_chars.push({ x: 3 + x, y: 80 + y, char: "back" })
+        cursor_chars.push({ x: (3 + (x * 7)) + 7, y: 80 + y, char: "back" })
         forever(function () {
             if (controller.right.isPressed() && cursor_pos_x.indexOf(cursor_x + 7) != -1) {
                 cursor_x += 7
