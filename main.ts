@@ -1,5 +1,7 @@
 namespace keyboard {
-    export function create(onenter: (input: string) => void, onchange: (input: string) => void, cursorimg?: Image, chars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".", ",", ":", "/", "+", "-", "*", ">", "\\", "[", "]", "{", "}", "|", ";", "(", ")", "^", "%", "$", "!", "#", "^", "<", " "]) {
+    let def_chars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".", ",", ":", "/", "+", "-", "*", ">", "\\", "[", "]", "{", "}", "|", ";", "(", ")", "^", "%", "$", "!", "#", "^", "<", " "]
+    
+    export function create(onenter: (input: string) => void, onchange: (input: string) => void, cursorimg?: Image, chars = def_chars) {
         pause(200)
         let input = ""
         let cursor = sprites.create(cursorimg)
@@ -99,6 +101,8 @@ namespace keyboard {
                                 for (let btn = 0; btn < btns.length; btn++) {
                                     btns[btn].destroy()
                                 }
+                                enter_btn.destroy()
+                                back_btn.destroy()
                                 onenter(input)
                                 input = ""
                             } else {
