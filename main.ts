@@ -1,5 +1,5 @@
 namespace keyboard {
-    export function create(x: number, y: number, onenter: (input: string) => void, onchange: (input: string) => void, cursorimg?: Image, chars? : Array<string>) {
+    export function create(start_x: number, start_y: number, onenter: (input: string) => void, onchange: (input: string) => void, cursorimg?: Image, chars? : Array<string>) {
         pause(200)
         let input = ""
         let cursor = sprites.create(cursorimg)
@@ -9,6 +9,8 @@ namespace keyboard {
         if (!chars) {
             chars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".", ",", ":", "/", "+", "-", "*", ">", "\\", "[", "]", "{", "}", "|", ";", "(", ")", "^", "%", "$", "!", "#", "^", "<", " "]
         }
+        let x = start_x
+        let y = start_y
         let cursor_pos_x = [0]
         let cursor_pos_y = [0]
         let cursor_chars = [{ x: 0, y: 0, char: "" }]
@@ -32,15 +34,15 @@ namespace keyboard {
                 x = 1
                 x_reset = false
             }
-            btn.setPosition(3 + (x * 7), 80 + y)
-            if (cursor_pos_x.indexOf(3 + (x * 7)) == -1) {
-                cursor_pos_x.push(3 + (x * 7))
+            btn.setPosition(3 + (x * 7), (80 + y) + start_y)
+            if (cursor_pos_x.indexOf((3 + (x * 7)) + start_x) == -1) {
+                cursor_pos_x.push((3 + (x * 7)) + start_x)
             }
-            if (cursor_pos_y.indexOf(80 + y) == -1) {
-                cursor_pos_y.push(80 + y)
+            if (cursor_pos_y.indexOf((80 + y) + start_y) == -1) {
+                cursor_pos_y.push((80 + y) + start_y)
             }
-            if (cursor_chars.indexOf({ x: 3 + (x * 7), y: 80 + y, char: chars[char] }) == -1) {
-                cursor_chars.push({ x: 3 + (x * 7), y: 80 + y, char: chars[char] })
+            if (cursor_chars.indexOf({ x: (3 + (x * 7)) + start_x, y: (80 + y) + start_y, char: chars[char] }) == -1) {
+                cursor_chars.push({ x: (3 + (x * 7)) + start_x, y: (80 + y) + start_y, char: chars[char] })
             }
             btns.push(btn)
         }
@@ -53,10 +55,10 @@ namespace keyboard {
         . . . . 1 . .
         . . . . . . .
     `)
-        enter_btn.setPosition((3 + (x * 7)) + 14, 80 + y)
-        cursor_pos_x.push((3 + (x * 7)) + 14)
-        cursor_pos_y.push(80 + y)
-        cursor_chars.push({ x: (3 + (x * 7)) + 14, y: 80 + y, char: "enter" })
+        enter_btn.setPosition(((3 + (x * 7)) + start_x) + 14, (80 + y) + start_y)
+        cursor_pos_x.push(((3 + (x * 7)) + start_x) + 14)
+        cursor_pos_y.push((80 + y) + start_y)
+        cursor_chars.push({ x: ((3 + (x * 7)) + start_x) + 14, y: (80 + y) + start_y, char: "enter" })
         let back_btn = sprites.create(img`
         . . . . . . .
         . . 1 . . . .
@@ -66,10 +68,10 @@ namespace keyboard {
         . . 1 . . . .
         . . . . . . .
     `)
-        back_btn.setPosition((3 + (x * 7)) + 7, 80 + y)
-        cursor_pos_x.push((3 + (x * 7)) + 7)
-        cursor_pos_y.push(80 + y)
-        cursor_chars.push({ x: (3 + (x * 7)) + 7, y: 80 + y, char: "back" })
+        back_btn.setPosition(((3 + (x * 7)) + start_x) + 7, (80 + y) + start_y)
+        cursor_pos_x.push(((3 + (x * 7)) + start_x) + 7)
+        cursor_pos_y.push((80 + y) + start_y)
+        cursor_chars.push({ x: ((3 + (x * 7)) + start_x) + 7, y: (80 + y) + start_y, char: "back" })
         forever(function () {
             if (controller.right.isPressed() && cursor_pos_x.indexOf(cursor_x + 7) != -1) {
                 cursor_x += 7
