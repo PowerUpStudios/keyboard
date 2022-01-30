@@ -4,10 +4,16 @@ Keyboard is an Makecode Arcade extension for making custom keyboards and reading
 
 > Keyboard works only with JavaScript
 
+# Usage
+
+```
+keyboard.create(x: number, y: number, onenter: (input: string) => void, onchange: (input: string) => void, cursorimg?: Image, chars?: Array<string>)
+```
+
 # Example
 
 ```
-keyboard.create(function(input) {
+keyboard.create(0, 0, function(input) {
  console.log("Entered input: " + input)
 }, function(input) {
  console.log("Input changed: " + input)
