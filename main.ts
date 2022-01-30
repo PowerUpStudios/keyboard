@@ -1,5 +1,5 @@
 namespace keyboard {
-    export function create(onenter: (input: string) => void, onchange: (input: string) => void, cursorimg?: Image, chars? : Array<string>) {
+    export function create(x: number, y: number, onenter: (input: string) => void, onchange: (input: string) => void, cursorimg?: Image, chars? : Array<string>) {
         pause(200)
         let input = ""
         let cursor = sprites.create(cursorimg)
@@ -13,8 +13,6 @@ namespace keyboard {
         let cursor_pos_y = [0]
         let cursor_chars = [{ x: 0, y: 0, char: "" }]
         let btns = [textsprite.create("")]
-        let x = 0
-        let y = 0
         let x_reset = false
         let old_y = y
         cursor_pos_x.splice(0, 1)
