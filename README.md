@@ -7,7 +7,7 @@ Keyboard is an Makecode Arcade extension for making custom keyboards and reading
 # Usage
 
 ```
-keyboard.create(x: number, y: number, onenter: (input: string) => void, onchange: (input: string) => void, cursorimg?: Image, chars?: Array<string>)
+keyboard.create(start_x: number, start_y: number, onenter: (input: string) => void, onchange: (input: string) => void, cursorimg?: Image, chars?: Array<string>)
 ```
 
 # Example
