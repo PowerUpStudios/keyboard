@@ -1,5 +1,5 @@
 namespace keyboard {
-    export function keyboard(onenter: (input: string) => void, onchange: (input: string) => void, cursorimg?: Image, chars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".", ",", ":", "/", "+", "-", "*", ">", "\\", "[", "]", "{", "}", "|", ";", "(", ")", "^", "%", "$", "!", "#", "^", "<", " "]) {
+    export function create(onenter: (input: string) => void, onchange: (input: string) => void, cursorimg?: Image, chars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".", ",", ":", "/", "+", "-", "*", ">", "\\", "[", "]", "{", "}", "|", ";", "(", ")", "^", "%", "$", "!", "#", "^", "<", " "]) {
         pause(200)
         let input = ""
         let cursor = sprites.create(cursorimg)
@@ -52,10 +52,10 @@ namespace keyboard {
         . . . . 1 . .
         . . . . . . .
     `)
-        enter_btn.setPosition(150, 96)
-        cursor_pos_x.push(150)
-        cursor_pos_y.push(96)
-        cursor_chars.push({ x: 150, y: 96, char: "enter" })
+        enter_btn.setPosition(3 + (x * 7), 80 + y)
+        cursor_pos_x.push(3 + (x * 7))
+        cursor_pos_y.push(80 + y)
+        cursor_chars.push({ x: 3 + (x * 7), y: 80 + y, char: "enter" })
         let back_btn = sprites.create(img`
         . . . . . . .
         . . 1 . . . .
@@ -65,10 +65,10 @@ namespace keyboard {
         . . 1 . . . .
         . . . . . . .
     `)
-        back_btn.setPosition(143, 96)
-        cursor_pos_x.push(143)
-        cursor_pos_y.push(96)
-        cursor_chars.push({ x: 143, y: 96, char: "back" })
+        back_btn.setPosition(3 + x, 80 + y)
+        cursor_pos_x.push(3 + x)
+        cursor_pos_y.push(80 + y)
+        cursor_chars.push({ x: 3 + x, y: 80 + y, char: "back" })
         forever(function () {
             if (controller.right.isPressed() && cursor_pos_x.indexOf(cursor_x + 7) != -1) {
                 cursor_x += 7
