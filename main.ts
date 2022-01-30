@@ -3,8 +3,8 @@ namespace keyboard {
         pause(200)
         let input = ""
         let cursor = sprites.create(cursorimg)
-        let cursor_x = 10
-        let cursor_y = 80
+        let cursor_x = 10 + start_x
+        let cursor_y = 80 + start_y
         cursor.setPosition(cursor_x, cursor_y)
         if (!chars) {
             chars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".", ",", ":", "/", "+", "-", "*", ">", "\\", "[", "]", "{", "}", "|", ";", "(", ")", "^", "%", "$", "!", "#", "^", "<", " "]
