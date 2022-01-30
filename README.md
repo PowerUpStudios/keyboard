@@ -1,8 +1,8 @@
-> Keyboard works only with JavaScript!
-
 # Keyboard
 
 Keyboard is an Makecode Arcade extension for making custom keyboards and reading the value
+
+> Keyboard works only with JavaScript
 
 # Example
 
@@ -23,3 +23,5 @@ keyboard.create(function(input) {
     1 1 1 1 1 1 1 1 1
 `)
 ```
+
+> The recommended cursor size is 9x9
