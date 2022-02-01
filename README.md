@@ -1,5 +1,7 @@
 # Keyboard
 
+![GitHub top language](https://img.shields.io/github/languages/top/PowerUpStudios/keyboard?style=for-the-badge)
+
 Keyboard is an Makecode Arcade extension for making custom keyboards and reading the value
 
 > Keyboard works only with JavaScript
