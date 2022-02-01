@@ -1,4 +1,4 @@
-![GitHub top language](https://img.shields.io/github/languages/top/PowerUpStudios/keyboard?style=for-the-badge) ![GitHub language count](https://img.shields.io/github/languages/count/PowerUpStudios/keyboard?style=for-the-badge)
+![GitHub top language](https://img.shields.io/github/languages/top/PowerUpStudios/keyboard?style=for-the-badge) ![GitHub language count](https://img.shields.io/github/languages/count/PowerUpStudios/keyboard?style=for-the-badge) ![GitHub issues](https://img.shields.io/github/issues/PowerUpStudios/keyboard?style=for-the-badge)
 
 
 # Keyboard
