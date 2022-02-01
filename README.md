@@ -1,6 +1,7 @@
-# Keyboard
+![GitHub top language](https://img.shields.io/github/languages/top/PowerUpStudios/keyboard?style=for-the-badge) ![GitHub language count](https://img.shields.io/github/languages/count/PowerUpStudios/keyboard?style=for-the-badge)
 
-![GitHub top language](https://img.shields.io/github/languages/top/PowerUpStudios/keyboard?style=for-the-badge)
+
+# Keyboard
 
 Keyboard is an Makecode Arcade extension for making custom keyboards and reading the value
 
